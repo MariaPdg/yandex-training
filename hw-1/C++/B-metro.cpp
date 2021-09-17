@@ -18,6 +18,8 @@ int main()
     int n, i, j;
     cin >> n >> i >> j;
     int res = minStations(n, i, j);
-    cout << res;
+    cout << res << endl;
     return 0;
 }
+
+
