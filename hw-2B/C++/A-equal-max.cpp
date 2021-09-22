@@ -34,4 +34,6 @@ int main(){
     int res = equalToMax(nums);
     cout << res << endl;
 
+    return 0;
+
 }
