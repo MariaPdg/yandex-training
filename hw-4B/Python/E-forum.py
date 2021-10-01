@@ -13,9 +13,8 @@ if __name__ == '__main__':
         if lines[i].split('\n')[0].isdigit():
             if int(lines[i]) == 0:
                 topic = lines[i+1]
-                if topic not in cnt:
-                    cnt[topic] = [message]
-                    message += 1
+                cnt[topic] = [message]
+                message += 1
             else:
                 for k, v in cnt.items():
                     if int(lines[i]) in v:
