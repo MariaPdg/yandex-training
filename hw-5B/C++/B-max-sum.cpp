@@ -19,7 +19,7 @@ vector <ll> buildPrefixSum(vector <ll> nums){
 
 int main(){
 
-    // Calculate prefix sums for segments [l, r] of the array
+    // Find the segment with maximum sum and output max sum
 
     long n, k;
     long l, r;
