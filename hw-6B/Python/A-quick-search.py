@@ -1,4 +1,4 @@
-def left_binserach(l, r, params):
+def left_binsearch(l, r, params):
     arr, L = params
     while l < r:
         m = l + (r - l) // 2
@@ -9,7 +9,7 @@ def left_binserach(l, r, params):
     return l
 
 
-def right_binserach(l, r, params):
+def right_binsearch(l, r, params):
     arr, R = params
     while l < r:
         m = (l + r + 1) // 2
@@ -32,8 +32,8 @@ if __name__ == '__main__':
 
     for i in range(k):
         L, R = map(int, input().split())
-        left = left_binserach(0, len(arr)-1, (arr, L))
-        right = right_binserach(0, len(arr)-1, (arr, R))
+        left = left_binsearch(0, len(arr)-1, (arr, L))
+        right = right_binsearch(0, len(arr)-1, (arr, R))
         if arr[left] >= L and arr[right] <= R:
             ans[i] = right - left + 1
     print(*ans)
