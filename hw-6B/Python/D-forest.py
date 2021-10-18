@@ -1,19 +1,19 @@
-def cut_trees_per_day(a, k, b, m, d):
-    t1 = a
-    t2 = b
-    if not d % k:
-        t1 = 0
-    if not d % m:
-        t2 = 0
-
-    return t1 + t2
-
-
 if __name__ == '__main__':
+
+    """Person 1: A = the number of trees to cut in each day, each Kth day is holiday.
+       Person 2: B = the number of trees to cut in each day, each Mth day is holiday.
+       X = the number of trees.
+       How many day are required to cut all trees?"""
+
     a, k, b, m, x = map(int, input().split())
-    cut_trees = 0
-    days = 1
-    while cut_trees < x:
-        cut_trees += cut_trees_per_day(a, k, b, m, days)
-        days += 1
-    print(days-1)
+    l = 0
+    r = x * 2 // a + 1  # max days if person 1 works alone and has a holiday one per 2 days (k = 2)
+    while l < r:
+        days = (l + r) // 2
+        hd1 = days // k
+        hd2 = days // m
+        if (days - hd1) * a + (days - hd2) * b < x:
+            l = days + 1
+        else:
+            r = days
+    print(l)
